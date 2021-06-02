@@ -4,11 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "api")// definir  ruta inicial http://localhost:3000
 public class TodoController {
 
     @Autowired
-    private TodoService service;
+    private InterfaceTodo service;
 
     @GetMapping(value = "api/todos")
     public Iterable<Todo> list(){
@@ -25,7 +25,7 @@ public class TodoController {
         if(todo.getId() != null){
             return service.save(todo);
         }
-        throw new RuntimeException("No existe el id para actualziar");
+        throw new RuntimeException("No existe el id para actualizar");
     }
 
     @DeleteMapping(value = "api/{id}/todo")

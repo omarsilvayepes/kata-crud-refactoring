@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TodoService {
-
+public class TodoService implements InterfaceTodo {
+    //enlazar con la interfaz repositorio
     @Autowired
     private TodoRepository repository;
 
