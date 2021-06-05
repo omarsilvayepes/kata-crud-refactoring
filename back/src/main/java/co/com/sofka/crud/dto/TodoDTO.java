@@ -3,8 +3,8 @@ package co.com.sofka.crud.dto;
 public class TodoDTO {
     private Long id;
     private String name;
-    private boolean hecho;
-    private Long referencia;
+    private boolean completed;
+    private Long identificator;
 
 
 
@@ -27,19 +27,19 @@ public class TodoDTO {
         this.name = name;
     }
 
-    public boolean isHecho() {
-        return hecho;
+    public boolean isCompleted() {
+        return completed;
     }
 
-    public void setHecho(boolean hecho) {
-        this.hecho = hecho;
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
     }
 
-    public Long getReferencia() {
-        return referencia;
+    public Long getIdentificator() {
+        return identificator;
     }
 
-    public void setReferencia(Long referencia) {
-        this.referencia = referencia;
+    public void setIdentificator(Long identificator) {
+        this.identificator = identificator;
     }
 }

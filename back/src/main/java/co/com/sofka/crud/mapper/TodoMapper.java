@@ -14,8 +14,8 @@ public interface TodoMapper {
     @Mappings({
 
             @Mapping(source = "nombre",target = "name"),
-            @Mapping(source = "completed",target = "hecho"),
-            @Mapping(source = "identificator",target = "referencia")
+            @Mapping(source = "completed",target = "completed"),
+            @Mapping(source = "identificator",target = "identificator")
     })
 
     // CONVERSION de ENTIDAD A DTO

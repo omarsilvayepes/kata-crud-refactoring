@@ -16,7 +16,7 @@ export const List = () => {
 
 
   const onDelete = (id) => {
-    fetch(HOST_API + "/" + id + "/todo", {
+    fetch(HOST_API + "/" + id + "/delete", {
       method: "DELETE"
     }).then((list) => {
       dispatch({ type: "delete-item", id });
@@ -33,7 +33,7 @@ export const List = () => {
       id: todo.id,
       completed: event.target.checked
     };
-    fetch(HOST_API + "/todo", {
+    fetch(HOST_API + "/update", {
       method: "PUT",
       body: JSON.stringify(request),
       headers: {
@@ -49,13 +49,13 @@ export const List = () => {
   const decorationDone = {
     textDecoration: 'line-through'
   };
-  return <div>
+  return <div className="lista">
     <table>
       <thead>
         <tr>
-          <td>ID</td>
-          <td>Tarea</td>
-          <td>¿Completado?</td>
+          <td>Id</td>
+          <td>Task</td>
+          <td>Completed</td>
         </tr>
       </thead>
       <tbody>
@@ -64,8 +64,8 @@ export const List = () => {
             <td>{todo.id}</td>
             <td>{todo.name}</td>
             <td><input type="checkbox" defaultChecked={todo.completed} onChange={(event) => onChange(event, todo)}></input></td>
-            <td><button onClick={() => onDelete(todo.id)}>Eliminar</button></td>
-            <td><button onClick={() => onEdit(todo)}>Editar</button></td>
+            <td><button onClick={() => onDelete(todo.id)}>Delete</button></td>
+            <td><button onClick={() => onEdit(todo)}>Edit</button></td>
           </tr>;
         })}
       </tbody>

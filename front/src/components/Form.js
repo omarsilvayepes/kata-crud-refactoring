@@ -42,7 +42,7 @@ const Form = () => {
     };
 
 
-    fetch(HOST_API + "/todo", {
+    fetch(HOST_API + "/update", {
       method: "PUT",
       body: JSON.stringify(request),
       headers: {
@@ -57,7 +57,7 @@ const Form = () => {
       });
   };
 
-  return <form ref={formRef}>
+  return <form ref={formRef} className="formulario">
     <input
       type="text"
       name="name"
@@ -66,8 +66,8 @@ const Form = () => {
       onChange={(event) => {
         setState({ ...state, name: event.target.value });
       }}></input>
-    {item.id && <button onClick={onEdit}>Actualizar</button>}
-    {!item.id && <button onClick={onAdd}>Crear</button>}
+    {item.id && <button onClick={onEdit}>Update</button>}
+    {!item.id && <button onClick={onAdd}>Create</button>}
   </form>;
 };
 export default Form;
